@@ -1,4 +1,3 @@
-console.log("hello, aws classroom!")
-const now = new Date();
-console.log(now.toString());
-console.log(now.toLocaleTimeString())
+console.log("hello, OVM!")
+console.log("hello, AIS!")
+console.log("hello, JMH!")
