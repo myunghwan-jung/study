@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - n 20.10.0
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      #list all files
+      - ls -la
+      - echo Build phase...
+      - echo enviroment variable
+      - echo $ENV_VAR
+
+artifacts:
+  files:
+      - "**/*"
+  base-directory: ./
