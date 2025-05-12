@@ -1,0 +1,15 @@
+aws dynamodb put-item \
+    --table-name demo-test-table \
+    --item '{
+        "partition_key": {"S": "test"},
+        "sort_key": {"N": "1"},
+        "value": {"S": "abcd1234"}
+    }'
+
+aws dynamodb update-item \
+    --table-name demo-test-table \
+    --key '{"partition_key": {"S": "test"}, "sort_key": {"N": "1"}}' \
+    --update-expression "SET #attrName = :attrValue, #testValue = :testVal" \
+    --expression-attribute-names '{"#attrName": "newvalue", "#testValue": "testvalue"}' \
+    --expression-attribute-values '{":attrValue": {"S": "abcd123456"}, ":testVal": {"S": "5432abcd"}}' \
+    --return-values ALL_NEW
