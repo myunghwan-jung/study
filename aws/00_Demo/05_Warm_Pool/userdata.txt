@@ -1,0 +1,59 @@
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+ 
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="cloud-config.txt"
+ 
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+ 
+#!/bin/bash
+echo "Starting EC2 user data script..."
+# Check if httpd is installed
+if ! dnf list installed httpd &> /dev/null; then
+  echo "httpd is not installed. Installing httpd..."
+  dnf install httpd -y
+else
+  echo "httpd is already installed."
+fi
+# Check if httpd service is available and start it
+if ! systemctl status httpd &> /dev/null; then
+  echo "httpd service is not available. Waiting for 120 seconds..."
+  sleep 120
+fi
+# Start the httpd service
+echo "Starting httpd service..."
+service httpd start
+# Enable httpd service to start on boot
+echo "Enabling httpd to start on boot..."
+chkconfig httpd on
+# Fetch instance metadata token and instance ID
+echo "Fetching instance metadata..."
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+INSTANCE_ID=$(curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/instance-id)
+# Add the instance ID to the default web page
+echo "Writing instance ID ($INSTANCE_ID) to /var/www/html/index.html..."
+echo "$INSTANCE_ID" >> /var/www/html/index.html
+# Notify Auto Scaling Group that lifecycle hook is complete
+echo "Notifying Auto Scaling Group that instance initialization is complete..."
+# Replace <LIFECYCLE-HOOK-NAME> and <AUTO-SCALING-GROUP-NAME> with the actual names
+LIFECYCLE_HOOK_NAME="on-instance-start"
+AUTO_SCALING_GROUP_NAME="demo-asg-warmpool"
+# Fetch lifecycle action token from the instance metadata
+aws autoscaling complete-lifecycle-action \
+  --lifecycle-hook-name "$LIFECYCLE_HOOK_NAME" \
+  --auto-scaling-group-name "$AUTO_SCALING_GROUP_NAME" \
+  --lifecycle-action-result "CONTINUE" \
+  --instance-id "$INSTANCE_ID"
+echo "Lifecycle hook notification sent. EC2 user data script completed."
+--//--
