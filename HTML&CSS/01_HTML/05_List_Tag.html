@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Tag</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List Tag</title>
+    </head>
+    <body>
+        <h1>목록 태그</h1>
+        <ul>
+            <li>&lt;ol&gt; : Oldered List. 순서가 있는 목록을 표현할 때 사용. type속성으로 글머리 기호를 변경 가능</li>
+            <li>&lt;ul&gt; : Unordered Lists. 순서가 없는 목록을 표현할 때 사용</li>
+            <li>&lt;li&gt; : Listed Item. 목록 하위 항목으로 사용. &lt;ol&gt;, &lt;ul&gt; 태그의 하위에 위치</li>
+            <li>&lt;dl&gt; : Definition List. 정의 목록. 사전처럼 용어를 설명하는 목록 생성.<br>EX: A는 B이다 같은 Key=Value로 사용할 떄 유용</li>
+            <li>&lt;dt&gt; : Definition Term. 정의 용어. 정의되는 용어의 제목을 넣을 때 사용.</li>
+            <li>&lt;dd&gt; : Definition Description. 정의 설명. 용어를 설명하는 데 사용.</li>
+        </ul>
+        <hr>
+        <h1>주의 사항</h1>
+        <ul>
+            <li>&lt;dl&gt; 태그는 하나 이상의 &lt;dt&gt;와 &lt;dd&gt;쌍의 태그를 갖고 있어야 한다.<br>단, 태그가 반드시 하나의 짝으로 지어져야 하는 것은 아니다.</li>
+            <li>&lt;li&gt;,&lt;dt&gt;=&lt;dd&gt;태그는 밖에서 독립적으로 사용할 수 없다.</li>
+            <li>&lt;ul&gt; 태그 하위 요소로는 &lt;li&gt; 태그가 위치해야 한다.</li>
+        </ul>
+        <hr>
+        <h1>실습</h1>
+        <h3>축구(ol)</h3>
+        <ol>
+            <li>축구는</li>
+            <li>발로 하는 스포츠이다</li>
+            <li>손을 쓰면 반칙이다</li>
+            <li>근데 십새들이 맨날 손으로 잡아당긴다</li>
+            <li>오늘도 팔에 멍들었쪙</li>
+        </ol>
+        <h3>축구의 기본기(ul)</h3>
+        <ul>
+            <li>패스</li>
+            <li>드리블</li>
+            <li>트래핑</li>
+            <li>슛</li>
+        </ul>
+        <h3>조축에서 마주치면 안되는 관상(dl)</h3>
+        <dl>
+            <dt>이레즈미</dt>
+            <dd>어딜 가나 과학이다</dd>
+            <dt>근육빵빵맨</dt>
+            <dd>본인의 근육을 과도하게 믿고 몸으로 들이밀지만 과한 체중을 컨트롤하지 못해 서로 다친다</dd>
+            <dt>껄렁선출</dt>
+            <dd>껄렁껄렁 농락하는 척 공차다가 지기 시작하면 무조건 담군다</dd>
+        </dl>
+    </body>
 </html>
