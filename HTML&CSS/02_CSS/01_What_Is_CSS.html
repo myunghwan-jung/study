@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        /* 내부 스타일 주석*/
+        .green-text {
+            color:green;
+        }
+        .text-decoration-none {
+            text-decoration: none;
+        }
+        #dark {
+            background-color: black;
+            color: white;
+        }
+        .blue {
+            background-color: white;
+            color: blue;
+        }
+        .content {
+            border: 2px solid red;
+            background-color: yellow;
+            padding: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 style="color: blue">제목</h1>
+    <p class="green-text">안녕하세요 콧물바보입니다</p>
+    <hr>
+    <a class="text-decoration-none"href="http://www.naver.com">네이버</a>
+    <span>이름 : </span>
+    <span>콧물바보</span>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>토마토</li>
+        <li>청포도</li>
+    </ul>
+    <hr>
+    <p id="dark">
+        <span class="blue">독일의</span> 前 <span class="blue">축구 선수</span>이자 튀르키예의 정치인.
+        <br>축구 선수 시절 포지션은 공격형 미드필더. 
+        <br>현재 튀르키예의 여당인 정의개발당의 중앙협의회 위원을 역임하고 있다.
+        <br>천재적인 패싱 능력을 보유했던 선수로서, 
+        <br>출전한 모든 주요 대회[5]에서 도움왕을 차지한, 
+        <br>명실상부한 2010년대 아스날의 슈퍼스타였으며, 
+        <br>국가대표팀에서도 2014 월드컵 우승을 이끈 주역이다.
+    </p>
+    <hr>
+    <h2>Inline Style 실습</h2>
+    <h1 style="color: blue">꾸밀 태그 안에 바로 적용하는 것이 인라인 스타일
+        <br>세미콜론을 통해 여러 스타일을 적용 가능
+        <br>실전에서는 스타일이 절대 바뀌지 않도록 개별 적용해야 하는 경우에 사용한다
+    </h1>
+    <div style="width:100px; height: 100px; border: 1px solid red"></div>
+    <hr>
+    <h2>Internal Style 실습</h2>
+    <p class="content">Internal Style은 head 태그 안에 style 태그를 선언하여 꾸미는 방법
+        <br>실전에서는 잘 사용하지 않는다. 다른 파일에서도 동일한 스타일을 적용하려면 불편하기 때문
+    </p>
+    <hr>
+    <h1>External Style 실습</h1>
+    <p class="article">외부에 style.css 파일을 생성, 스타일을 적용한 후 link 태그로 html에 불러온다
+        <br>관리하기도 편하고 용량도 작기 때문에 가장 자주 사용되는 방법
+    </p>
+
+</body>
+</html>
