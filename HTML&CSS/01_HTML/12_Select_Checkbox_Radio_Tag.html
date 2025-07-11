@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tag - Select, Checkbox, Radio</title>
+</head>
+<body>
+    <h2>Form 데이터 태그 속성</h2>
+        <ul>
+            <li>required : 입력값이 필수라는 것을 명시</li>
+            <li>readonly : 필드를 읽기 전용으로 만든다. 데이터를 수정할 수는 없지만 서버로 전송됨</li>
+            <li>disabled : 비활성화 시킬 수 있으며 해당 필드는 서버로 전송되지 않음</li>
+            <li>autofocus : 초기에 해당 필드에 커서를 위치 시킴</li>
+            <li>placeholder : 입력 필드가 비어있을 때 해당 입력값의 설명 또는 가이드 문구를 삽입</li>
+        </ul>
+        <hr>
+    <h2>실습</h2>
+        <fieldset>
+            <legend>Form 데이터 태그 속성 테스트</legend>
+            <ul>
+                <li>
+                    <label for="text">text</label>
+                    <input type="text" id="text" value="readonly" readonly>
+                </li>
+                <li>
+                    <label for="text">text</label>
+                    <input type="text" id="text" value="disabled" disabled>
+                </li>
+                <li>
+                    <label for="text">text</label>
+                    <input type="text" id="text" value="autofocus" autofocus>
+                </li>
+                <li>
+                    <label for="text">text</label>
+                    <input type="text" id="text" placeholder="placehorder">
+                </li>
+                <li>
+                    <input type="submit" label="제출">
+                </li>
+            </ul>
+        </fieldset>
+        <hr>
+    <h2>Checkbox</h2>
+        여러개의 체크박스 항목 중 2개 이상 선택할 수 있음.
+        <br>그리고 체크박스 선택 시 선택된 체크박스의 value값이 서버로 전송
+        <hr>
+    <h2>Radio</h2>
+        여러개의 라디오 항목 중 1개를 선택
+        <br>그리고 라디오 항목 선택 시 선택된 항목의 value 값이 서버로 전송
+        <br>여러개 중 하나를 선택하게 하려면 항목들의 &lt;radio name=""&gt; name 속성 값을 같은 값으로 그루핑 헤줘야 함
+        <hr>
+    <h2>실습</h2>
+        <form action="">
+            <fieldset>
+                <legend>좋아하는 색상을 모두 선택</legend>
+            <ul>
+                <li>
+                    <label for="red">빨강</label>
+                    <input type="checkbox" id="red" value="red">
+                </li>
+                <li>
+                    <label for="orange">주황</label>
+                    <input type="checkbox" id="orange" value="orange">
+                </li>
+                <li>
+                    <label for="yellow">노랑</label>
+                    <input type="checkbox" id="yellow" value="yellow">
+                </li>
+                <li>
+                    <label for="green">초록</label>
+                    <input type="checkbox" id="green" value="green">
+                </li>
+                <li>
+                    <label for="blue">파랑</label>
+                    <input type="checkbox" id="blue" value="blue">
+                </li>
+            </ul>
+            </fieldset>
+            <fieldset>
+                <legend>배송 방법</legend>
+                <ul>
+                    <li>
+                        <label for="free">무료</label>
+                        <input type="radio" name="delivery" id="free" value="free">
+                    </li>
+                    <li>
+                        <label for="pay">유료</label>
+                        <input type="radio" name="delivery" id="pay" value="pay">
+                    </li>
+                </ul>
+            </fieldset>
+        
+        <hr>
+        <h2>Textarea</h2>
+        &lt;textarea&gt;는 여러 줄의 데이터를 입력받을 수 있다
+        <ul>속성
+            <li>
+                rows : 화면에 표시되는 행수를 지정
+            </li>
+            <li>
+                cols : 화면에 표시되는 컬럼 수를 지정
+            </li>
+        </ul>
+        <hr>
+        <h2>Textarea 실습</h2>
+        <fieldset>
+            <legend>자기소개서</legend>
+            <textarea name="" id="" cols="30" rows="5">textarea에 기본 value를 넣기 위해서는 컨텐츠 영역에 넣어야 한다</textarea>
+        </fieldset>
+        <hr>
+        <h2>Select</h2>
+        &lt;select&gt; 태그는 옵션 메뉴를 제공. &lt;option&gt; 태그로 각 항목을 나타내며, 
+        &lt;select&gt; 태그는 &lt;option&gt; 태그를 감싼다
+        <br>옵션 안에 있는 내용은 사용자 화면에 보여주는 내용이며 실제 서버로 전송되는 값은 value 값이다
+        <li>selected 해당 속성은 현재 &lt;select&gt; 요소에서 선택된 &lt;option&gt; 을 가르킨다</li>
+        <hr>
+        <h2>Select 실습</h2>
+        <fieldset>
+            <legend>주문 상품을 선택하시오</legend>
+            <ul>
+                <li>
+                    <select name="goods" id="goods" multiple>
+                        <option value="apple_10kg">사과 10kg</option>
+                        <option value="apple_20kg">사과 20kg</option>
+                        <option value="apple_30kg" selected>사과 30kg</option>
+                        <option value="apple_40kg">사과 40kg</option>
+                        <option value="apple_50kg">사과 50kg</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <hr>
+        <h2>Datalist</h2>
+        다른 컨트롤에서 고를 수 있는 선택지들(option)의 묶음
+        <hr>
+        <h2>Datalist 실습</h2>
+        <fieldset>
+            <legend>아이스크림 선택</legend>
+                <ul>
+                    <li>
+                        <label for="icecream-choice">맛을 선택하시오</label>
+                        <input list="icecream-flavors" id="icecream-choice" name="icecream-choice">
+                        <datalist id="icecream-flavors">
+                            <option value="Chocolate"></option>
+                            <option value="Coconut"></option>
+                            <option value="Mint"></option>
+                            <option value="Strawberry"></option>
+                            <option value="Vanilla"></option>
+                        </datalist>
+                    </li>
+                </ul>
+        </fieldset>
+        <hr>
+        <h2>Button</h2>
+        &lt;button&gt; 태그는 클릭 가능한 버튼을 나타낸다
+        <br>&lt;form&gt; 내부는 물론이고 버튼 기능이 필요한 곳 어디나 배치 가능
+        <br><h3>type</h3>
+        버튼의 행동 방식을 선언
+            <li>submit : 버튼이 서버로 양식 데이터를 제출(기본값)</li>
+            <li>reset : &lt;input type="reset"&gt; 처럼, 모든 입력 필드를 초기값으로 되돌림</li>
+            <li>button : 기본 행동이 없으며, 주로 클릭 후 자바스크립트 측 코드를 명령할 때 사용</li>
+        <hr>
+        <h2>Button 실습</h2>
+        <button type="submit">제출하기</button>
+        <button type="reset">초기화</button>
+        <button type="button" onclick="alert('Hello World~!')">버튼</button>
+    </form>
+</body>
+</html>
