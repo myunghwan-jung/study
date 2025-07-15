@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style 01</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            /* font-family: serif, monospace; */
+            font-family: "Noto Serif KR", serif;
+            font-size: 16px;
+        }
+        .title{
+            font-size: 28px;
+        }
+        .content{
+            font-size: 18px;
+        }
+        .font-italic {
+            font-style: italic;
+        }
+        .font-weight-bold {
+            font-weight: bold;
+        }
+        .font-weight-300 {
+            font-weight: 300;
+        }
+        .font-variant {
+            font-variant: small-caps;
+        }
+        .subtitle {
+            font-size: 20px;
+        }
+        .subtitle-rem {
+            font-size: 2rem;
+            /* 2rem이니까 html의 폰트 사이즈 2배 */
+        }
+        .subtitle-em {
+            font-size: 2em;
+        }
+        .article {
+            font-size: 10px;
+        }
+        .rectangle.width {
+            width: 20vw;
+            height:100px;
+            background-color: yellow;
+        }
+        .rectangle.height {
+            height: 20vh;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>글꼴 관련 속성</h2>
+    <ul>
+        <li>font-family : 글꼴 종류를 지정. 기본값은 웹브라우저 기본 글꼴</li>
+        <li>font-size : 글자 크기를 지정</li>
+        <li>font-style : 글자를 이텔릭체로 표시</li>
+        <li>font-weight : 글자 굵기를 지정</li>
+        <li>font-variant : 소문자를 작은 대문자로 바꿔줌</li>
+    </ul>
+    <hr>
+    <h2>글꼴 속성 실습</h2>
+    <h2 class="title">글꼴 관련 속성 실습</h2>
+    <p class="content">P태그는 단락을 나타내는 태그이다</p>
+    <p class="content font-italic">P태그는 단락을 나타내는 태그이다</p>
+    <p class="content font-weight-bold">P태그는 단락을 나타내는 태그이다</p>
+    <p class="content font-weight-300">P태그는 단락을 나타내는 태그이다</p>
+    <p class="content font-variant">font-variant : small-caps는 소문자를 작은 대문자로 바꿔준다. Hello AI world</p>
+    <hr>
+    <h2>웹 폰트</h2>
+    사용자의 컴퓨터에 설치된 폰트와 상관 없이 온라인틔 특정 서버에 위치한 폰트 파일을 다운로드하여 화면에 표시해주는 웹 전용 폰트
+    <ul>
+        <li>
+            구글 웹 폰트
+            <br>구글 웹 폰트 사이트에 방문하여 link 또는 @import 문을 사용하여 웹 폰트를 적용할 수 있다
+        </li>
+    </ul>
+    <hr>
+    <h2>단위 em, rem</h2>
+    <ul>
+        <li>px : 픽셀 단위</li>
+        <li>rem : 루트 요소의 글꼴 크기</li>
+        <li>em : 요소의 글꼴 크기</li>
+        <li>vw : viewport 너비의 1%</li>
+        <li>vh : viewport 높이의 1%</li>
+        <li>그 외 단위 MDN 참고</li>
+    </ul>
+    <hr>
+    <h2>px</h2>
+    <p class="subtitle">여기서 사용할 단위는 폰트에만 적용되는 것이 아니라 여백 등에도 적용된다</p>
+    <h2>rem</h2>
+    <p class="subtitle-rem">rem은 최상위 요소를 기준, 몇 배로 지정할 것인지 설정한다</p>
+    <div class="article">
+    <h2>em</h2>
+    <p class="subtitle-em">em은 최상위 요소가 아니라 자기 자신을 기준으로 적용된다</p>
+    </div>
+    <hr>
+    <!-- Viewport width : Viewport는 브라우저 화면을 말한다
+    전체 화면이 1200x1600 이라면
+    100vw : 1200
+    50vw : 600
+    100vh : 1600
+    50vh : 800 -->
+    <h2>vw</h2>
+    <div class="rectangle width"></div>
+    <!-- Viewport Height -->
+    <h2>vh</h2>
+    <div class="rectangle height"></div>
+</body>
+</html>
