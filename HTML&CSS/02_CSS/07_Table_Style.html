@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Style</title>
+    <style>
+        #movies {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #movies td,
+        #movies th {
+            border: 1px solid #a1a1a1;
+            padding: 8px;
+        }
+        #movies th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: green;
+            color: white;
+        }
+        /* 호버는 마우스 커서 업 상태를 말한다 */
+        #movies tr:hover {
+            background-color: grey;
+        }
+        /* nth-child 는 tr태그의 형제들, even은 짝수번 */
+        #movies tr:nth-child(even) {
+            background-color: rgb(191, 190, 190);
+        }
+    </style>
+</head>
+<body>
+    <h2>표 관련 속성</h2>
+    <ul>
+        <li>Table 태그에 border 속성 활용하기</li>
+        <li>table 태그에 border 속성을 사용하여 테두리를 그린다</li>
+        <li>td, th 태그에 border 속성을 사용하여 테두리를 그린다</li>
+        <li>border-collapse: collapse; 속성을 사용하여 중복된 테두리를 하나로 합친다</li>
+        <li>table 제목에 배경색 지정하기</li>
+    </ul>
+    <hr>
+    <h2>표 스타일 실습</h2>
+    <table id="movies">
+        <tr>
+            <th>영화</th>
+            <th>상영시간</th>
+            <th>개봉</th>
+        </tr>
+        <tr>
+            <td>블랙핑크 더 무비</td>
+            <td>100분</td>
+            <td>2021.08.04 개봉</td>
+        </tr>
+        <tr>
+            <td>보스 베이비2</td>
+            <td>107분</td>
+            <td>2021.07.28 개봉</td>
+        </tr>
+        <tr>
+            <td>더 수어사이드 스쿼드</td>
+            <td>132분</td>
+            <td>2021.08.04 개봉</td>
+        </tr>
+        <tr>
+            <td>블랙 위도우</td>
+            <td>134분</td>
+            <td>2021.07.07 개봉</td>
+        </tr>
+        <tr>
+            <td>방법-재차의</td>
+            <td>109분</td>
+            <td>2021.07.07 개봉</td>
+        </tr>
+        <tr>
+            <td>모가디슈</td>
+            <td>121분</td>
+            <td>2021.07.28 개봉</td>
+        </tr>
+    </table>
+</body>
+</html>
