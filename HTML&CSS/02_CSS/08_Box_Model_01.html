@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model 01</title>
+    <style>
+        html {
+            line-height: 200%;
+        }
+        div.content {
+            background-color: grey;
+            width: 200px;
+            height: 200px;
+            padding: 20;
+            border: 10px solid green;
+            margin: 40px
+        }
+        span {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        div.padding {
+            border: 1px solid black;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 1px;
+        }
+        div.margin {
+            border: 1px solid red;
+            margin: 20px 10px;
+        }
+        .shape {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Box Model</h2>
+    모든 HTML 요소는 웹 페이지에서 일정 공간을 차지한다. 이러한 공간을 박스 모델이라고 정의한다
+    <br>HTML 요소의 박스 모델은 Content, Padding, Margin으로 구성되어있다
+    <li>Content - 텍스트나 이미지가 들어있는 HTML 요소의 실질적인 내용</li>
+    <li>Padding - Content와 Border 사이의 영역으로 쉽게 말해 안쪽 여백</li>
+    <li>Border - Content를 감싸는 테두리</li>
+    <li>Margin - 테두리와 이웃하는 요소 사이의 간격. 바깥쪽 여백</li>
+    <h2>Box Model CSS 속성</h2>
+    박스 모델은 속성을 지정하지 않으면 브라우저가 선언한 기본값으로 세팅, CSS 속성으로 박스모델 값을 변경할 수 있음
+    <h3>Content</h3>
+    <ul>
+        <li>width : Content 영역은 width 값으로 가로 너비를 지정</li>
+        <li>height : Content 영역은 height 값으로 세로 너비를 지정</li>
+        <li>인라인 레벨 요소에는 width, height가 적용되지 않음. 인라인 요소는 컨텐츠 만큼의 영역을 갖기 때문
+            <br>만약 인라인 요소의 width, height를 변경하고 싶다면 display: inline-block으로 변경해야 함
+            <br>inline-block : block과 inline의 중간 형태. 요소는 inline인데 내부는 block처럼 표시
+        </li>
+    </ul>
+    <h2>바깥 여백 Margin</h2>
+    <ul>
+        <li>margin 속성은 HTML 요소의 바깥 여백을 지정한다</li>
+        <li>margin-top, margin-bottom, margin-left, margin-right 속성을 사용하여 각각 지정 가능</li>
+    </ul>
+    <h3>마진 중첩</h3>
+    HTML 요소를 세로로 배치할 경우 margin과 margin이 만날 때 margin 값이 큰 쪽으로 겹쳐지는 것
+    <br>요소를 가로로 배치할 경우에는 상관 없지만 세로로 배치할 경우에는 값이 큰 margin만 적용된다
+    <h2>안쪽 여백 Padding</h2>
+    <ul>
+        <li>padding 속성은 HTML 요소의 안쪽 여백을 지정한다</li>
+        <li>padding-top, padding-bottom, padding-left, padding-right 속성을 사용하여 각각 지정하는 것도 가능</li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <div class="content"></div>
+    <span>Hello CSS</span>
+    <div class="padding">
+        몸싸움을 이용한 볼 경합에 굉장히 능하다. 상당한 수준의 주력을 이용한 라인 브레이킹도 위협적인데, 
+        강한 전방 압박을 수행할 수 있는 지구력까지 갖췄다. 스포르팅으로 이적한 후에는 전술상의 이유로 크게 두드러지지 않지만 
+        코번트리 시티에서 뛸 때는 전방에서의 태클과 인터셉트로도 주목을 받았다. 패스 능력도 뛰어난 편이며, 
+        패스와 기회 창출 면에서 2023-24 시즌 포르투갈 리그에서 동 포지션 최고 수준의 스탯을 쌓았다. 
+        연계 능력도 매우 뛰어난 축에 속하는데, 단순히 질 좋은 패스를 구사하는 것에서 멈추지 않고 패스의 타이밍에 관한 이해도 또한 매우 높다.
+    </div>
+    <div class="margin">
+        몸싸움을 이용한 볼 경합에 굉장히 능하다. 상당한 수준의 주력을 이용한 라인 브레이킹도 위협적인데, 
+        강한 전방 압박을 수행할 수 있는 지구력까지 갖췄다. 스포르팅으로 이적한 후에는 전술상의 이유로 크게 두드러지지 않지만 
+        코번트리 시티에서 뛸 때는 전방에서의 태클과 인터셉트로도 주목을 받았다. 패스 능력도 뛰어난 편이며, 
+        패스와 기회 창출 면에서 2023-24 시즌 포르투갈 리그에서 동 포지션 최고 수준의 스탯을 쌓았다. 
+        연계 능력도 매우 뛰어난 축에 속하는데, 단순히 질 좋은 패스를 구사하는 것에서 멈추지 않고 패스의 타이밍에 관한 이해도 또한 매우 높다.
+    </div>
+    <div class="shape" style="margin-bottom: 40px;">margin 중첩</div>
+    <div class="shape">margin 중첩</div>
+</body>
+</html>
