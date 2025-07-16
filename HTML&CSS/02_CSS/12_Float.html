@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        img {
+            width: 200px;
+        }
+        .container {
+            width: 800px;
+            border: 1px solid grey;
+        }
+        .float-left {
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .float-right {
+            float: right;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        p {
+            border: 1px solid blue;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>float 속성</h1>
+    float의 사전적 의미는 뜨다
+    <br>HTML 요소에 float이 적용되면 그 요소는 원래의 흐름에서 벗어나 둥둥 떠다니듯 배치가 된다
+    <br>그리하여 인접한 텍스트 또는 요소가 그 주위를 자연스럽게 감싼다
+    <ul>자주 사용하는 float 속성
+        <li>none : 기본값. 요소를 띄우지 않음</li>
+        <li>left : 왼쪽에 띄움</li>
+        <li>right : 오른쪽에 띄움</li>
+        <li>inherit : 부모 요소로부터 상속</li>
+        <li>initial : 기본값으로 설정</li>
+    </ul>
+    <h2>clear 속성</h2>
+    clear는 취소하다. float: left; 혹은 float: right; 값을 취소한다
+    <ul>
+        <li>clear: none; 기본값</li>
+        <li>clear: left; 왼쪽을 취소</li>
+        <li>clear: right; 왼쪽을 취소</li>
+        <li>clear: both; 양쪽을 모두 취소</li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+        <div class="container">
+            <img class="float-left" src="../assets/test_image_01.png" alt="">
+            <p>
+                요케레스를 더 위협적인 스트라이커로 만들어주는 것은 단순히 이런 드리블 능력뿐만 아니라 크로스나 컷백 능력도 매우 좋다는 것이다. 
+                특히 낮게 깔리는 크로스의 궤적이 위협적이라 중앙 공격수임에도 본인이 측면으로 빠진 뒤 다른 선수들이 빈 공간으로 침투하는 
+                상황에서 안쪽으로 공을 연결하는 플레이에 능숙하다. 수비수들이 많은 페널티 박스 안에서도 템포를 조절할 수 있을 정도의 볼 간수 
+                능력을 가지고 있으므로 일부러 템포를 조절하다가 폭발적인 가속으로 제낀 후 중앙에 있는 선수에게 크로스나 컷백을 건네줄 수도 있다.
+            </p>
+            <img class="float-right" src="../assets/test_image_02.jpeg" alt="">
+            <p class="clear">
+                큰 키임에도 드리블과 가속능력 또한 매우 좋은데 이는 요케레스가 큰 신체 조건과 덩치에도 불구하고 하지 근력이 뛰어나 
+                동적 균형 능력이 좋기 때문. 따라서 가감속 뿐만 아니라 온더볼 상황에서 적절한 턴과 움직임을 바탕으로 수비수를 
+                벗겨낼 수 있는 능력 또한 갖추고 있다. 이를 통해 중원에서는 볼전진을, 측면에서 돌파능력을 보여준다.
+            </p>
+    </div>
+</body>
+</html>
