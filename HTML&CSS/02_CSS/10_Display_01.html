@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display 01</title>
+    <style>
+        html {
+            line-height: 200%;
+        }
+        .title {
+            font-size: 150%;
+            font-weight: 700;
+            color: red;
+        }
+        div, h4 {
+            border: 1px solid grey;
+            width: 100px;
+            height: 100px;
+        }
+        a {
+            border: 1px solid green;
+        }
+        .display-inline {
+            border: 1px solid green;
+        }
+        .display-none {
+            display: none;
+            /* visibility: hidden; */
+        }
+        article > div, 
+        article >span {
+            display: inline-block
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>display 속성</h2>
+    display 속성은 HTML 요소를 어떻게 표시할 지 결정한다. HTML 요소마다 기본적으로 갖고 있는 display 값이 다르다
+    <br>이 기본값이 display: block이면 Block Level Element이고 display: inline이면 Inline Level Element
+    <br>display 속성은 주로 4가지 속성 값이 쓰인다
+    <h3>기본 4가지 값</h3>
+    <span class="title">none</span>
+    <br>요소를 보이지 않게 설정한다. visibility 속성을 hidden으로 설정한 것과 달리, 영역도 차지하지 않는다
+    <br><br>
+    <span class="title">block</span>
+    <br>기본적으로 가로 영역을 모두 채우며, block 요소 다음에 등장하는 태그는 줄바꿈이 된 것처럼 보인다.
+    문서에서 문단을 표시할 때 주로 사용한다
+    <br>width, height 속성 지정 가능
+    <br>div p h1~6 태그가 여기에 해당
+    <br><br>
+    <span class="title">inline</span>
+    <br>컨텐츠만큼 영역을 차지한다. block과 달리 줄바꿈이 되지 않고, width 및 height를 지정할 수 없다
+    <br>word 같은 문서에서 볼드, 이텔릭, 색상, 밑줄 등 글자나 문장에 효과를 주기 위해 존재하는 단위
+    <br><br>
+    <span class="title">inline-block</span>
+    <br>block과 inline의 중간 형태. 요소는 inline인데 내부는 block처럼 표시
+    <br>inline처럼 컨텐츠 만큼 영역을 차지하며 가로로 배치되지만 block처럼 내부 속성인 width, height를 변경할 수는 없다
+    <br><br>
+    <hr>
+    <h2>실습</h2>
+    <div>Display Block</div>
+    <div>Display Block</div>
+    <div>Display Block</div>
+    <h4>Display Block</h4>
+    <span class="display-inline">Display Inline</span>
+    <span class="display-inline">Display Inline</span>
+    <span class="display-inline">Display Inline</span>
+    <a href="#">Display Inline</a>
+    <div class="display-none">Display none</div>
+    <article>
+    <div>Display Inline Block</div>
+    <div>Display Inline Block</div>
+    <div>Display Inline Block</div>
+    <span>Display Inline Block</span>
+    <span>Display Inline Block</span>
+    <span>Display Inline Block</span>
+    </article>
+</body>
+</html>
