@@ -42,6 +42,38 @@
         li:not(.target) {
             font-size: 30px;
         } */
+        /* 가상 요소 */
+        .required::before {
+            content: "*";
+            margin-right: 2px;
+            color: red;
+            font-size: 18px;
+        }
+        [data-tooltip] {
+            position: relative;
+        }
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 0px;
+            left: 56px;
+            background-color: black;
+            color: white;
+            width: 200px;
+        }
+        .letter::first-letter {
+            font-size: 60px;
+            color: blue;
+        }
+        .line::first-line {
+            background-color: yellow;
+            color: blue;
+            font-size: 20px;
+        }
+        p::selection {
+            background-color: red;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +107,27 @@
             <br>순서가 달라지면 적용이 안될 가능성이 있기 때문
         </li>
     </ul>
+    <h2>가상 요소(Psuedo element)</h2>
+    가상 요소는 해당 HTML 요소의 특정 부분만을 선택할 때 사용
+    <ul>
+        <li>문법
+            <br>선택자::가상요소이름 {속성: 속성값;}
+        </li>
+        <li>예시
+            <br>p::first-line {
+                color: blue;
+                text-transfrom: uppercase;
+            }
+        </li>
+        <li>대표적인 CSS 가상 요소
+            <ul>
+                <li>::first-letter : 텍스트의 첫 글자만을 선택. 블록 레벨 요소에만 사용 가능</li>
+                <li>::first-line : 텍스트의 첫 라인만 선택. 블록 레벨 요소에만 사용 가능</li>
+                <li>::befor : 특정 요소의 내용(content) 부분 바로 앞에 다른 요소를 삽입할 때 사용</li>
+                <li>::selection : 해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용</li>
+            </ul>
+        </li>
+    </ul>
     <hr>
     <h2>실습</h2>
     <fieldset>
@@ -87,14 +140,14 @@
     <fieldset>
         <legend>focus, before, after</legend>
         <div class="field">
-            <label for="name">이름</label>
+            <label class="required" for="name">이름</label>
             <input type="text" id="name">
         </div>
         <div class="field">
-            <label for="age">나이</label>
+            <label class="required" for="age">나이</label>
             <input type="text" id="age">
         </div>
-        <button>보내기</button>
+        <button data-tooltip="이 버튼을 클릭하여 정보를 보냅니다">보내기</button>
     </fieldset>
     <fieldset>
         <legend>nth-child, not</legend>
@@ -105,6 +158,17 @@
             <li>4content</li>
             <li>5content</li>
         </ul>
+    </fieldset>
+    <fieldset>
+        <legend>first-letter, first-line, section</legend>
+        <div>
+            <p class="letter">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, vero, sunt quaerat numquam exercitationem debitis in repudiandae architecto tenetur molestiae pariatur. Incidunt maiores eveniet, expedita provident fuga saepe sunt nihil!
+            </p>
+            <p class="line">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sed! Provident, alias labore? Ut animi iusto corrupti sequi. Nobis, sint. Beatae nesciunt voluptatum earum placeat nemo at modi non omnis?
+            </p>
+        </div>
     </fieldset>
 </body>
 </html>
