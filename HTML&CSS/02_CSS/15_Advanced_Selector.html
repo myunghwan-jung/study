@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selector 01</title>
+    <style>
+        html {
+            line-height: 200%
+        }
+        a {
+            font-size : 30px;
+        }
+        a:link {
+            color: cyan;
+        }
+        a:visited {
+            color: red;
+        }
+        a:hover {
+            color: blue;
+            font-weight: 900;
+        }
+        fieldset:hover {
+            background: lightgrey;
+            box-shadow: 0 0 20px grey;
+        }
+        a:active {
+            color: yellow;
+        }
+        input:focus {
+            outline: none;
+            border: 3px solid red;
+            box-shadow: 0 0 20px rgb(235, 133, 133);
+        }
+        .field {
+            margin-bottom: 10px;
+        }
+        /* li:nth-child(odd) {
+            background-color: yellow;
+        }
+        li:not(.target) {
+            font-size: 30px;
+        } */
+    </style>
+</head>
+<body>
+    <h1>가상 클래스, 요소</h1>
+    <h2>가상 클래스</h2>
+    가상 클래스(pseudo-class)는 선택하고자 하는 HTML 요소의 특별한 상태(state)를 명시할 때 사용
+    <ul>
+        <li>문법
+            <br>선택자: 가상클래스이름 {속성: 속성값;}
+        </li>
+        <li>예제
+            <br> a:hover {
+                color: orange;
+            }
+            input:focus {
+                color: red;
+            }
+        </li>
+        <li>대표적인 css 가상 클래스
+            <ul>
+                <li>:link : 아직 방문하지 않은 요소. href속성을 가진 a, area, link 중 방문하지 않은 모든 요소를 선택</li>
+                <li>:visited : 사용자가 방문한 적이 있는 링크</li>
+                <li>:active : 사용자가 활성화한 요소(버튼 등)을 나타냄</li>
+                <li>:hover : 사용자의 마우스 포인터가 요소 위에 올라가 있으면 선택</li>
+                <li>:focus : 양식의 입력 칸 등 포커스를 받은 요소를 나타냄. 보통 사용자가 요소를 클릭 또는 탭하거나 
+                    키보드 tab으로 선택했을 때 발동</li>
+                <li>:nth-child : 형제 사이에서의 순서에 따라 요소를 선택</li>
+                <li>:not(selector) : not(selector) 안에 포함된 요소를 제외</li>
+            </ul>
+            대표적인 가상 클래스를 사용할 때는 link -> visited -> hover -> active 순서로 선언하는 것을 권장
+            <br>순서가 달라지면 적용이 안될 가능성이 있기 때문
+        </li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <fieldset>
+        <legend>Pseudo Class</legend>
+        <div>
+            <a href="https://naver.com">네이버</a>
+            <a href="https://kakao.com">카카오</a>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>focus, before, after</legend>
+        <div class="field">
+            <label for="name">이름</label>
+            <input type="text" id="name">
+        </div>
+        <div class="field">
+            <label for="age">나이</label>
+            <input type="text" id="age">
+        </div>
+        <button>보내기</button>
+    </fieldset>
+    <fieldset>
+        <legend>nth-child, not</legend>
+        <ul>
+            <li class="target">1content</li>
+            <li>2content</li>
+            <li>3content</li>
+            <li>4content</li>
+            <li>5content</li>
+        </ul>
+    </fieldset>
+</body>
+</html>
