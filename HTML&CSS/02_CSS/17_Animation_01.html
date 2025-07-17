@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 01</title>
+    <style>
+        html {
+            line-height: 200%;
+        }
+        .shape {
+            margin: 0 auto;
+            margin-top: 80px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .animation1 {
+            animation-name: shape-color;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+        }
+        @keyframes shape-color {
+            from {
+                background-color: red;
+            }
+            50% {
+                background-color: yellow;
+            }
+            to {
+                background-color: blue;
+            }
+        }
+        .animation2 {
+            animation: circle 2s infinite;
+        }
+        @keyframes circle {
+            0% {
+                border-radius: 0;
+            }
+            50% {
+                border-radius: 50%;
+            }
+            100% {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    요소에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 것
+    <br>이 떄 CSS 스타일이 변화되는 중간 지점을 키프레임이라고 한다. 즉, @keyframes는 애니메이션의 중간 상태
+    <br>애니메이션은 트랜지션보다 훨씬 더 규모가 크고 복잡하며 다양한 능력을 가지고 있기 때문에 좀 더 정밀한 효과를 구현 가능
+    <h2>keyframes 정의하기</h2>
+    @keyframes로 애니메이션을 생성할 수 있다
+    <ul>
+        <li>from(시작)~to(끝)을 이용한 애니메이션 shape 생성</li>
+        <li>from ~ {percent} ~ 를 이용한 애니메이션 background 생성</li>
+    </ul>
+    <h2>Animation 속성</h2>
+    <ul>
+        <li>animation-name
+            <br>애니메이션의 중간 상태를 지정하기 위한 이름을 정의. 중간 상태는 @keyframes 규칙을 이용하여 기술
+        </li>
+        <li>animation-duration
+            <br>한 싸이클의 애니메이션이 얼마에 걸쳐 일어날 지 지정
+        </li>
+        <li>animation-delay
+            <br>엘리먼트가 로드되고 나서 언제 애니메이션이 시작될지 지정
+        </li>
+        <li>animation-iteration-count
+            <br>애니메이션이 몇 번 반복될지 지정. infinite로 지정하면 무한히 반복
+        </li>
+        <li>animation-play-state
+            <br>애니메이션을 멈추거나 다시 시작할 수 있음
+        </li>
+        <li>animation-timing-function
+            <br>중간 상태들의 전환을 어떤 시간 간격으로 진행할지 지정
+        </li>
+        <li>animation-fill-mode
+            <br>애니메이션이 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 지정
+        </li>
+        <li>animation
+            <br>animation들의 단일 속성으로 한꺼번에 작성
+        </li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <main class="container">
+        <div class="shape animation1"></div>
+        <div class="shape animation2"></div>
+    </main>
+</body>
+</html>
