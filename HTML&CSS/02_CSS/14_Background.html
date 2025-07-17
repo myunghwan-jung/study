@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background 01</title>
+    <title>Background</title>
     <style>
         html {
             line-height: 200%;
@@ -38,6 +38,27 @@
         .attachment-local {
             background-attachment: local;
         }
+        .background-size {
+            width: 600px;
+            height: 300px;
+            background-image: url("../assets/test_image_01.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border: 5px solid cyan;
+        }
+        .linear-gradient {
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            background: linear-gradient(to right, red 50%, blue 90%, yellow)
+        }
+        .radial-gradient {
+            width: 500px;
+            height: 200px;
+            border: 1px solid blue;
+            background: radial-gradient(circle at 10% 50%, white, yellow, blue);
+        }
     </style>
 </head>
 <body>
@@ -66,7 +87,32 @@
         <li>inherit : 부모 요소의 속성값을 상속받는다</li>
     </ul>
     <span class="emph">background</span>
-    <br>backgounr-image backgounr-repeat back9<br>
+    <br>backgounrd-image backgound-repeat background-position backgounrd-attachment 속성을 한꺼번에 선언<br><br>
+    <span class="emph">background-size</span>
+    <br>요소 배경 이미지의 크기를 설정. 그대로 두거나 늘리고 줄일 수 있다. 공간에 맞추기도 가능
+    <ul>
+        <li>contain : 이미지가 잘리거나 찌그러지지 않는 한도 내에서 제일 크게 설정</li>
+        <li>cover : 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정. 이미지의 가로 세로 비율이 요소와 다르다면
+            이미지를 세로 또는 가로 방향으로 잘라내어 빈 공간이 생기지 않도록 함
+        </li>
+        <li>auto : 배경 이미지의 원본 크기를 유지</li>
+        <li>length : 원본 크기의 너비/높이를 주어진 값으로 늘리거나 줄임. 음수 사용 불가</li>
+        <li>percentage : 배경 위치 지정 영역의 일정 백분율에 해당하는 크기로 이미지를 조절</li>
+    </ul>
+    <span class="emph">선형 그라데이션</span>
+    <br>linear-gradient() 함수는 두 개 이상의 색상이 직선을 따라 점진적으로 변화하는 것을 말한다
+    <ul>
+        <li>to 키워드를 사용하여 방향을 결정</li>
+        <li>deg 키워드를 사용하여 각도값을 지정</li>
+    </ul>
+    <span class="emph">원형 그라데이션</span>
+    <ul>
+        <li>타원형
+            <br>radial-gradient() 함수를 사용하여 타원형 그라데이션을 만들 수 있다
+        </li>
+        <li>정원
+            <br>radial-gradient(circle) 함수를 사용하여 정원형 그라데이션을 만들 수 있다
+        </li>
     <hr>
     <h2>실습</h2>
     <h3>background-color</h3>
@@ -102,6 +148,13 @@
         Adipisci reprehenderit quaerat quae accusantium! Tenetur, blanditiis officia? Officia cupiditate deleniti ut, in quae nulla libero quasi maxime ea velit eos eveniet adipisci corrupti eaque aliquid quod possimus mollitia quaerat!
         Dolor numquam eos possimus necessitatibus. Nostrum eveniet impedit nam deserunt, tempora sequi ab repudiandae, illo suscipit, officiis porro cupiditate hic voluptates pariatur quia fugiat quis nisi corporis quisquam? Quo, dolor.
     </div>
-    <div style="height: 1000px; width: 10px; background-color: red;"></div>"
+    <h3>background-size</h3>
+    <div class="background-size"></div>
+    <h3>linear-gradient</h3>
+    <div class="linear-gradient"></div>
+    <h3>radial-gradient</h3>
+    <div class="radial-gradient"></div>
+    <div style="height: 1000px; width: 10px; background-color: red;"></div>
+    
 </body>
 </html>
