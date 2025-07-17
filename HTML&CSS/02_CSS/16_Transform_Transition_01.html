@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform & Transition 01</title>
+    <style>
+        html {
+            line-height: 200%;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: lightgrey;
+        }
+        .outline, 
+        .box {
+            width: 60px;
+            height: 60px;
+        }
+        .outline {
+            border: 3px solid yellow;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .box {
+            background-color: blue;
+        }
+        .box1 {
+            transform: translate(10px, 10px);
+        }
+        .box2 {
+            transform: scale(2, 0.5);
+        }
+        .box3 {
+            transform: rotateZ(45deg);
+        }
+        /* .outline-box3 {
+            perspective: 50px;
+        } */
+        .box4 {
+            transform: skew(15deg, 20deg);
+        }
+        /* Transition */
+        .box1 {
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 1s;
+            transition-timing-function: ease-in;
+        }
+        .box1:hover {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transform: rotate(180deg);
+        }
+        .box2 {
+            transition: 2s 1s ease-out;
+        }
+        .box2:hover {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Transform</h1>
+    transform 속성은 HTML 요소를 회전, 크기 조절, 기울이기, 이동 효과를 나타낼 때 사용
+    <br>사용법은 transform 속성 값으로 특수 함수를 넣어주면 됨
+    <br>주의사항 : transform을 사용하려면 해당 요소의 display 속성이 block 또는 inline-block이어야 함
+    <h2>transform 함수</h2>
+    <ul>
+        <li>translate(tx, ty)
+            <br>지정한 크기만큼 x축, y축으로 이동
+        </li>
+        <li>translateX(tx)
+            <br>지정한 크기만큼 x축으로 이동
+        </li>
+        <li>translateY(ty)
+            <br>지정한 크기만큼 y축으로 이동
+        </li>
+        <li>scale(sx, sy)
+            <br>지정한 크기만큼 x축과 y축으로 확대, 축소
+        </li>
+        <li>scaleX(sx)
+            <br>지정한 크기만큼 x축으로 확대, 축소
+        </li>
+        <li>sacleY(sy)
+            <br>지정한 크기만큼 y축으로 확대, 축소
+        </li>
+        <li>rotate(각도)
+            <br>지정한 각도만큼 회전(+ 시계방향, - 시계반대방향)
+        </li>
+        <li>rotateX(각도)
+            <br>x축을 기준으로 회전. 이 때 입체감있게 표현하려면 perspective 속석을 부모 요소에 적용해야 함
+        </li>
+        <li>rotateY(각도)
+            <br>y축을 기준으로 회전. 이 때 입체감있게 표현하려면 perspective 속석을 부모 요소에 적용해야 함
+        </li>
+        <li>rotateZ(각도)
+            <br>z축을 기준으로 회전. 이 때 입체감있게 표현하려면 perspective 속석을 부모 요소에 적용해야 함
+        </li>
+        <li>skew(ax, ay)
+            <br>지정한 각도만큼 x축과 y축으로 왜곡
+        </li>
+        <li>skewX(ax)
+            <br>지정한 각도만큼 x축으로 왜곡
+        </li>
+        <li>skewY(ay)
+            <br>지정한 각도만큼 y축으로 왜곡
+        </li>
+    </ul>
+    <h2>Transition</h2>
+    transition의 사전적 의미는 전환. CSS에서 transition은 속성 값이 변할 때 더욱 부드럽게 전환할 수 있도록 도와줌
+    <br>예를 들어 100x100 이미지에 커서를 올리면 200x200으로 변환하다고 했을 때 부드럽게 바뀌게 만드는 것
+    <h3>Transition 속성</h3>
+    <ul>
+        <li>transition-property
+            <br>어떤 속성에 트랜지션 효과를 줄 것인지 지정
+            <ul>
+                <li>transition-property : 속성1, 속성2;와 같이 지정</li>
+                <li>all : 모든 속성을 지정(생략 가능)</li>
+                <li>none : 아무것도 지정하지 않음</li>
+            </ul>
+        </li>
+        <li>transition-duration
+            <br>트랜지션 효과를 몇 초 동안 실행할 것인지 지정
+        </li>
+        <li>transition-delay
+            <br>지정한 초 만큼 기다렸다가 실행
+        </li>
+        <li>transition-timing-function
+            <br>트랜지션이 시작하면서 끝날때의 타이밍(속도 지정)
+            <ul>
+                <li>linear : 트랜지션의 시작과 끝의 속도가 일정</li>
+                <li>ease-in : 천천히 시작했다가 완료될 때 속도가 증가</li>
+                <li>ease-out : 빨리 시작했다가 완료될 때 속도가 감소</li>
+            </ul>
+        </li>
+        <li>transition
+            <br>transition 단축 속성으로 위 속성들을 한번에 표기
+        </li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <div class="outline">
+        <div class="box box1"></div>
+    </div>
+    <div class="outline">
+        <div class="box box2"></div>
+    </div>
+    <div class="outline outline-box3">
+        <div class="box box3"></div>
+    </div>
+    <div class="outline">
+        <div class="box box4"></div>
+    </div>
+</body>
+</html>
