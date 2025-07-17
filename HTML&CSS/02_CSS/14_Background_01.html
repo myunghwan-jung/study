@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background 01</title>
+    <style>
+        html {
+            line-height: 200%;
+        }
+        .emph {
+            font-size: 150%;
+            color: red;
+            background-color: rgb(210, 208, 208);
+        }
+        .red {
+            background-color: red;
+            width: 120px;
+            height: 120px;
+        }
+        .image {
+            background-image: url("../assets/test_image_02.jpeg");
+            background-repeat: repeat;
+            background-position-x: right;
+            background-position-y: bottom;
+            width: 200px;
+            height: 400px;
+            border: 5px solid cyan;
+            display: inline-block;
+            overflow-y: scroll;
+        }
+        .attachment-scroll {
+            background-attachment: scroll;
+        }
+        .attachment-fixed {
+            background-attachment: fixed;
+        }
+        .attachment-local {
+            background-attachment: local;
+        }
+    </style>
+</head>
+<body>
+    <h1>배경 이미지 스타일</h1>
+    <span class="emph">background-color</span>
+    <br>HTML요소의 배경 색을 지정한다<br><br>
+    <span class="emph">background-image</span>
+    <br>HTML요소에 배경 이미지를 한 개 또는 여러 개를 지정한다<br><br>
+    <span class="emph">background-repeat</span>
+    <br>배경 이미지의 반복 방법을 지정한다. 가로축 및 세로축을 따라 반복하거나 아예 반복하지 않을 수도 있다<br>
+    <ul>
+        <li>repeat : 가로, 세로 반복</li>
+        <li>no-repeat : 반복하지 않음</li>
+        <li>repeat-x : 가로 반복</li>
+        <li>repeat-y : 세로 반복</li>
+    </ul>
+    <span class="emph">background-position</span>
+    <br>배경 이미지의 초기 위치를 설정<br><br>
+    <span class="emph">background-attachment</span>
+    <br>배경 이미지를 뷰포트 내에서 고정할지 선택하는 속성<br>
+    <ul>
+        <li>scroll : 선택한 요소와 같이 움직인다. 내용을 스크롤하면 배경 이미지는 스크롤되지 않는다(기본값)</li>
+        <li>fixed : 움직이지 않는다</li>
+        <li>local : 선택한 요소와 같이 움직인다. 내용을 스크롤하면 배경 이미지도 스크롤 됨</li>
+        <li>initial : 기본값으로 설정</li>
+        <li>inherit : 부모 요소의 속성값을 상속받는다</li>
+    </ul>
+    <span class="emph">background</span>
+    <br>backgounr-image backgounr-repeat back9<br>
+    <hr>
+    <h2>실습</h2>
+    <h3>background-color</h3>
+    <div class="red"></div>
+    <h3>background-image</h3>
+    <div class="image attachment-scroll">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa nesciunt velit aut voluptas voluptates excepturi molestias quis repellendus repellat amet eos facere maiores delectus laboriosam quidem, incidunt qui libero.
+        Veniam voluptatibus fugit pariatur asperiores delectus dolore facilis sed? Corrupti asperiores nobis aspernatur, dicta reprehenderit enim rerum quas, ex nesciunt distinctio dolorum corporis minus. Voluptates obcaecati eligendi delectus tenetur quo!
+        Fugit in beatae ducimus itaque ullam, porro commodi culpa. Molestiae magni reprehenderit vel voluptatibus rerum labore dolorem, soluta blanditiis illum nulla ipsam odit similique. Delectus sequi cumque animi neque explicabo!
+        Eum, iusto atque! Perferendis nostrum, voluptatibus quasi illum explicabo eos dolore consectetur ea reprehenderit, tempore deleniti, sed eaque. Consectetur ratione blanditiis suscipit, architecto vero enim. Odit iusto aut quod placeat.
+        Veniam, in tenetur cum earum, nemo quas impedit quos doloremque est, cupiditate cumque exercitationem nam! Iste reprehenderit dolorem dolor ullam architecto voluptatum, et consectetur pariatur itaque aliquam exercitationem facere? Perspiciatis!
+        Cupiditate perspiciatis eius necessitatibus laborum quibusdam quis quam perferendis officia quae assumenda labore saepe, beatae, itaque dolores atque voluptate non! Consectetur corporis quae voluptate tempora doloribus et odio aspernatur ad?
+        Adipisci reprehenderit quaerat quae accusantium! Tenetur, blanditiis officia? Officia cupiditate deleniti ut, in quae nulla libero quasi maxime ea velit eos eveniet adipisci corrupti eaque aliquid quod possimus mollitia quaerat!
+        Dolor numquam eos possimus necessitatibus. Nostrum eveniet impedit nam deserunt, tempora sequi ab repudiandae, illo suscipit, officiis porro cupiditate hic voluptates pariatur quia fugiat quis nisi corporis quisquam? Quo, dolor.
+    </div>
+    <div class="image attachment-fixed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa nesciunt velit aut voluptas voluptates excepturi molestias quis repellendus repellat amet eos facere maiores delectus laboriosam quidem, incidunt qui libero.
+        Veniam voluptatibus fugit pariatur asperiores delectus dolore facilis sed? Corrupti asperiores nobis aspernatur, dicta reprehenderit enim rerum quas, ex nesciunt distinctio dolorum corporis minus. Voluptates obcaecati eligendi delectus tenetur quo!
+        Fugit in beatae ducimus itaque ullam, porro commodi culpa. Molestiae magni reprehenderit vel voluptatibus rerum labore dolorem, soluta blanditiis illum nulla ipsam odit similique. Delectus sequi cumque animi neque explicabo!
+        Eum, iusto atque! Perferendis nostrum, voluptatibus quasi illum explicabo eos dolore consectetur ea reprehenderit, tempore deleniti, sed eaque. Consectetur ratione blanditiis suscipit, architecto vero enim. Odit iusto aut quod placeat.
+        Veniam, in tenetur cum earum, nemo quas impedit quos doloremque est, cupiditate cumque exercitationem nam! Iste reprehenderit dolorem dolor ullam architecto voluptatum, et consectetur pariatur itaque aliquam exercitationem facere? Perspiciatis!
+        Cupiditate perspiciatis eius necessitatibus laborum quibusdam quis quam perferendis officia quae assumenda labore saepe, beatae, itaque dolores atque voluptate non! Consectetur corporis quae voluptate tempora doloribus et odio aspernatur ad?
+        Adipisci reprehenderit quaerat quae accusantium! Tenetur, blanditiis officia? Officia cupiditate deleniti ut, in quae nulla libero quasi maxime ea velit eos eveniet adipisci corrupti eaque aliquid quod possimus mollitia quaerat!
+        Dolor numquam eos possimus necessitatibus. Nostrum eveniet impedit nam deserunt, tempora sequi ab repudiandae, illo suscipit, officiis porro cupiditate hic voluptates pariatur quia fugiat quis nisi corporis quisquam? Quo, dolor.
+    </div>
+    <div class="image attachment-local">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa nesciunt velit aut voluptas voluptates excepturi molestias quis repellendus repellat amet eos facere maiores delectus laboriosam quidem, incidunt qui libero.
+        Veniam voluptatibus fugit pariatur asperiores delectus dolore facilis sed? Corrupti asperiores nobis aspernatur, dicta reprehenderit enim rerum quas, ex nesciunt distinctio dolorum corporis minus. Voluptates obcaecati eligendi delectus tenetur quo!
+        Fugit in beatae ducimus itaque ullam, porro commodi culpa. Molestiae magni reprehenderit vel voluptatibus rerum labore dolorem, soluta blanditiis illum nulla ipsam odit similique. Delectus sequi cumque animi neque explicabo!
+        Eum, iusto atque! Perferendis nostrum, voluptatibus quasi illum explicabo eos dolore consectetur ea reprehenderit, tempore deleniti, sed eaque. Consectetur ratione blanditiis suscipit, architecto vero enim. Odit iusto aut quod placeat.
+        Veniam, in tenetur cum earum, nemo quas impedit quos doloremque est, cupiditate cumque exercitationem nam! Iste reprehenderit dolorem dolor ullam architecto voluptatum, et consectetur pariatur itaque aliquam exercitationem facere? Perspiciatis!
+        Cupiditate perspiciatis eius necessitatibus laborum quibusdam quis quam perferendis officia quae assumenda labore saepe, beatae, itaque dolores atque voluptate non! Consectetur corporis quae voluptate tempora doloribus et odio aspernatur ad?
+        Adipisci reprehenderit quaerat quae accusantium! Tenetur, blanditiis officia? Officia cupiditate deleniti ut, in quae nulla libero quasi maxime ea velit eos eveniet adipisci corrupti eaque aliquid quod possimus mollitia quaerat!
+        Dolor numquam eos possimus necessitatibus. Nostrum eveniet impedit nam deserunt, tempora sequi ab repudiandae, illo suscipit, officiis porro cupiditate hic voluptates pariatur quia fugiat quis nisi corporis quisquam? Quo, dolor.
+    </div>
+    <div style="height: 1000px; width: 10px; background-color: red;"></div>"
+</body>
+</html>
