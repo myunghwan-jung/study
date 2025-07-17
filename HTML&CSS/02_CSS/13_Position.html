@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        html {
+            line-height: 200%;
+        }
+        .empha {
+            color: red;
+            background-color: rgb(220, 219, 219);
+        }
+        main, section, article, div {
+            border: 1px solid black;
+            padding: 20px;
+        }
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+        section {
+            background-color: violet;
+            position: relative;
+        }
+        article {
+            background-color: cyan;
+        }
+        div {
+            background-color: white;
+        }
+        div.relative {
+            position: relative;
+            right: 20px;
+            top: -150px;
+            z-index: 1;
+        }
+        div.absolute {
+            position: absolute;
+            background-color: grey;
+            top: 0px;
+            left: 0px;
+        }
+        div.fixed {
+            position: fixed;
+            background-color: blue;
+            bottom: 30px;
+            right: 30px;
+            border-radius: 50%;
+        }
+        div.sticky {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>position 속성</h2>
+    position 속성은 HTML 요소를 배치하는 방법을 지정한다
+    <ul>
+        <li><span class="empha">static(기본값)</span>
+            <br>static은 요소가 HTML 문서에서 일반적인 흐름을 따라 배치가 되게 한다.
+        </li>
+        <li><span class="empha">relative</span>
+            <br>static과 마찬가지로 요소가 문서의 일반적인 흐름에 따라 배치되게 한다. static과의 차이점은 요소가 자신의
+            static 위치에서 top right bottom left와 같은 속성에 의한 상대적 위치에 배치된다는 점이다
+        </li>
+        <li><span class="empha">absolute</span>
+            <br>absolute는 요소가 문서의 일반적인 흐름을 따르지 않게 한다. absolute는 position: static 속성을 가지고 있지
+            않은 부모를 기준으로 움직인다. 만약 부모 중 포지션이 relative, absolute, fixed인 태그가 없다면 가장 상위 태그가
+            기준이 된다
+        </li>
+        <li><span class="empha">fixed</span>
+            <br>fixed 역시 absolute와 마찬가지로 요소가 문서의 일반적인 흐름에서 제거된다. 대신 뷰포트를 기준으로 한 위치에
+            배치된다. 스크롤 되어도 움직이지 않고 고정된다
+        </li>
+        <li><span class="empha">sticky</span>
+            <br>sticky는 요소가 HTML 문서 안에서 static과 같이 일반적인 흐름에 따라가다가 스크롤 위치가 임계점에 이르면
+            fixed와 같이 박스를 화면에 고정한다
+        </li>
+    </ul>
+    <h3>위치 속성</h3>
+    position 속성이 배치하는 방법이라면 top left bottom right 속성은 요소를 원하는 곳으로 위치시키는 속성이다
+    <br>이 속성은 position: static에서는 적용되지 않는다
+    <h3>관련 속성</h3>
+    z-index : 어느 객체가 앞으로 나오고 뒤로 갈지 순서를 결정하는 속성이다
+    <br>z-index는 position(relative, absolute, fixed)속성이 적용된 요소에서만 작동한다
+    <br>값이 높을 수록 앞으로 나옴
+    <hr>
+    <h2>실습</h2>
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div>static</div>
+                <div class="relative">relative</div>
+                <div class="absolute">absolute</div>
+                <div class="fixed">fixed</div>
+                <div class="sticky">sticky</div>
+                <div style="height: 1000px"></div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
