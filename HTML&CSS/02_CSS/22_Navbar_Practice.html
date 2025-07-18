@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Practice</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav-container {
+            background-color: darkslategrey;
+            list-style: none;
+            display: flex;
+        }
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        .nav-item:hover {
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"><a href="#">홈</a></li>
+            <li class="nav-item"><a href="#">상품</a></li>
+            <li class="nav-item"><a href="#">장바구니</a></li>
+            <li class="nav-item"><a href="#">마이페이지</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
