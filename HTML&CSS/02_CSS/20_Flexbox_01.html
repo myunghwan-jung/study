@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 01</title>
+    <style>
+        html {
+            line-height: 300%;
+        }
+        /* * {
+            margin: 0px;
+            padding: 0px;
+        } */
+        .flex-container {
+            background-color: green;
+            height: 100vh;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            /* flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-around; */
+            align-items: flex-end;
+        }
+        .flex-item {
+            color: white;
+            width: 80px;
+            background-color: rgb(222, 100, 222);
+            text-align: center;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox란?</h1>
+    flexbox는 뷰포트나 요소의 크기가 불명확하거나 동적으로 변할 때에도 효율적으로 요소를 배치, 정렬, 분산할 수 있는 방법을 제공하는 
+    css3의 새로운 레이아웃 방식
+    <br>flexbox의 장점은 복잡한 계산 없이 요소의 크기와 순서를 유연하게 배치할 수 있다는 점이다. 정렬, 방향, 순서, 크기 등을
+    유연하게 조절할 수 있기 때문에 별도의 분기 처리를 줄일 수 있어 CSS만으로 다양한 레이아웃을 구성할 수 있다
+    <h2>flexbox 구성</h2>
+    flexbox는 여러 개의 자식 요소인 flex item과 이것을 감싸고 있는 상위 부모 요소인 flex container로 구성된다
+    <ul>
+        <li>flex container : flex item을 감싸고 있는 부모 요소</li>
+        <li>flex item : flex container 안에 있는 여러 개의 자식 요소</li>
+    </ul>
+    <h2>flexbox 만들기</h2>
+    정렬하려는 요소(flex item)의 부모 요소(flex container)에 display: flex 속성을 지정하면 된다
+    <br>.flex-container {
+        display: flex;
+    }
+    <br>위 코드처럼 display: flex 속성이 적용된 요소는 flex container가 되고, 그 자식 요소는 flex item이 된다
+    <br>flex container와 flex item은 부모 요소와 자식 요소를 한 세트로 사용하는 ul과 li와 비슷하다
+    <br>만약 부모 요소가 inline 요소인 경우에는 inline-flex를 사용한다
+    <h2>flexbox 주축</h2>
+    flex item은 주축(main axis)에 따라 정렬된다. 주축의 방향은 flex container의 flex-direction 속성으로 결정된다
+    <br> flex-direction 속성의 기본값은 row이다
+    <ul>
+        <li>row : 주축의 방향이 위쪽에서 오른쪽, 주축의 방향에 따라 flex item이 정렬된다</li>
+        <li>column : 주축의 방향이 위에서 아래, 주축의 방향에 따라 flex item이 정렬된다</li>
+    </ul>
+    <h2>flexbox 속성 분류</h2>
+    flexbox에서 정렬이나 배치에 사용하는 속성은 부모 요소인 flex container에 지정하는 속성과 
+    자식 요소인 flex item에 지정하는 속성으로 나뉜다
+    <h3>flex container 속성</h3>
+    전체적인 정렬이나 흐름에 관련된 속성은 flex container에 정의한다
+    <ul>
+        <li>display</li>
+        <li style="color:red; background-color: lightgrey; display: inline">flex-direction</li>
+        <br>flex-direction 속성은 flex container의 주축 방향을 설정한다
+        <ul>
+            <li>row : 좌에서 우로 수평 배치. 기본값</li>
+            <li>row-reverse : 우에서 좌로 수평 배치</li>
+            <li>column : 위에서 아래로 수직 배치</li>
+            <li>column-reverse : 아래에서 위로 수직 배치</li>
+        </ul>
+        <li style="color:red; background-color: lightgrey; display: inline">flex-wrap</li>
+        <br>flex-wrap 속성은 flex container 자식 요소인 여러개의 flex item을 한 줄로 또는 여러 줄로 배치한다
+        <br>flex-wrap 속성은 flex container의 width보다 flex item들의 width합이 더 큰 경우, 
+        <br>한 줄로 표현할 것인지 혹은 여러 줄로 표현할 것인지 지정한다
+        <ul>
+            <li>nowrap : flex item을 개행하지 않고 1행에 배치. flex-wrap의 기본값. 
+                각 flex item의 폭은 flex container에 들어갈 수 있는 크기로 축소된다
+            <br>하지만 flex item들의 width 합계가 flex container의 width보다 큰 경우 flex container가
+        넘치게 된다. 이 떄 overflow: auto;를 지정하면 가로 스크롤이 생긴다</li>
+            <li>wrap : flex item들의 width 합계가 flex container의 width보다 큰 경우 flex item을 개행하여 배치. 기본적으로 좌에서 우, 위에서 아래로 배치
+            </li>
+            <li>wrap-reverse : wrap과 동일하나 아래에서 위로 배치</li>
+        </ul>
+        <li style="color:red; background-color: lightgrey; display: inline">flex-flow</li>
+        <br>flex-flow 속성은 flex-direction 속성과 flex-wrap 속성을 설정하기 위한 단축 속성. 기본값은 row, nowrap<br>
+        <li style="color:red; background-color: lightgrey; display: inline">justify-content</li>
+        <br>flex container의 main axis를 기준으로 flex item을 수평 정렬
+        <ul>
+            <li>flex-start : main start(좌측)를 기준으로 정렬. 기본값</li>
+            <li>flex-end : main end(우측)을 기준으로 정렬</li>
+            <li>center : flex container의 중앙에 정렬</li>
+            <li>space-between : 첫번째와 마지막 flex item은 좌우 측면에 고정되고 나머지 flex item들은 균등한 간격으로 사이에 정렬</li>
+            <li>space-around : 모든 flex item을 균등한 간격으로 정렬</li>
+        </ul>
+        <li style="color:red; background-color: lightgrey; display: inline">align-content</li>
+        <br>flex-container의 cross axis 기준으로 flex item을 수직 정렬한다
+        <br>justify-content 속성은 flex container의 main axis를 기준으로 flex-item을 수평 정렬
+        <ul>
+            <li>stretch: 모든 flex item은 flex item의 행 이후에 균등하게 분배된 공간에 정렬. 기본값</li>
+            <li>flex-start : 모든 flex item은 flex container의 cross start 기준으로 stack 정렬</li>
+            <li>flex-end : 모든 flex item은 flex container의 cross end 기준으로 stack 정렬 </li>
+            <li>center : 모든 flex item은 flex container의 cross axis 중앙에 stack 정렬</li>
+            <li>space-between : 첫번째 flex item의 행은 flex container의 상단, 마지막 flex item의 행은 하단에 배치. 나머지는 균등 분할하여 배치</li>
+            <li>space-around : 모든 flex item은 균등 분할된 공간 내에 배치</li>
+        </ul>
+        <li style="color:red; background-color: lightgrey; display: inline">align-items</li>
+        <br>flex item을 flex container의 수직 방향(cross axis)으로 정렬. align-item 속성은 모든 flex item에 적용
+        <ul>
+            <li>strech : 모든 flex item은 flex container의 높이(cross start ~ cross end)에 꽉찬 높이를 갖는다. 기본값</li>
+            <li>flex-start : 모든 flex item은 flex container의 cross start 기준으로 정렬</li>
+            <li>flex-end : 모든 flex item은 flex container의 cross end 기준으로 정렬</li>
+            <li>center : 모든 flex item은 flex container의 cross axis 중앙에 정렬</li>
+            <li>baseline : 모든 flex item은 flex container의 baseline을 기준으로 정렬</li>
+        </ul>
+        align-items는 flex line을 기준으로 정렬, align-content는 flex line을 정렬
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">9</div>
+        <div class="flex-item">10</div>
+        <div class="flex-item">11</div>
+        <div class="flex-item">12</div>
+        <div class="flex-item">13</div>
+        <div class="flex-item">14</div>
+        <div class="flex-item">15</div>
+    </div>
+</body>
+</html>

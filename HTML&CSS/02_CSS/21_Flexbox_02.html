@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 02</title>
+    <style>
+    html {
+        line-height: 200%;
+    }
+    .flex-container {
+            background-color: green;
+            height: 100vh;
+            display: flex;
+        }
+        .flex-item {
+            color: white;
+            width: 80px;
+            height: 80px;
+            background-color: rgb(222, 100, 222);
+            text-align: center;
+            border: 1px solid yellow;
+        }
+        .item1 {
+            /* order: 2; */
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+            /* flex-basis: 50%; */
+            /* flex: 2 2 auto; */
+            align-self: flex-end;
+        }
+        .item2 {
+            /* order: 3; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* flex-basis: 160px; */
+            /* flex: 1 1 auto; */
+            align-self: center;
+        }
+        .item3 {
+            /* order: 4; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* flex-basis: 20vw; */
+            /* flex: 1 1 auto; */
+        }
+        .item4 {
+            /* order: 1; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* flex: 1 1 auto; */
+        }
+        .item5 {
+            /* order: 0; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* flex: 1 1 auto; */
+        }
+    </style>
+</head>
+<body>
+    <h2>flex item</h2>
+    자식 요소의 크기나 순서에 관련된 속성은 flex item에 정의한다
+    <ul>
+        <li><span style="color: red; background-color: lightgrey;">flex</span>
+        <br>flex-grow flex-shrink flex-basis 속성의 단축속성. 기본값은 0 1 auto.
+        </li>
+        <li><span style="color: red; background-color: lightgrey;">flex-grow</span>
+            <br>flex item의 너비에 대한 확대 인자를 지정. 기본값은 0. 음수값 무효
+            <br>.flex-item {
+                flex-grow: 양의 정수값;
+            }
+            <br>모든 flex item이 동일한 flex-grow 속성값을 가지면 모든 flex item은 동일한 너비를 갖는다
+            <br>두번째 flex item의 flex-grow 속성값은 3으로 지정하면 다른 flex item보다 더 넓은 너비를 갖는다
+        </li>
+        <span style="color: red; background-color: lightgrey;">flex-shrink</span>
+        <br>flex item의 너비에 대한 축소 인자를 지정. 기본값은 1. 음수값 무효. 0을 지정하면 축소 해제
+        <br>.flex-item {
+            flex-shrink: 양의 정수값;
+        }
+        <br>기본적으로 모든 flex item은 축소된 상태로 지정(기본값 1)하고 두번째 flex item만 축소를 해제하면 원래의 너비를 유지
+        </li>
+        <li><span style="color: red; background-color: lightgrey;">flex-basis</span>
+        <br>flex item의 기본 너비값을 px, %등의 단위로 지정. 기본값은 auto
+        <br>.flex-item {
+            flex-basis: auto | 너비;
+        }
+        </li>
+        <li><span style="color: red; background-color: lightgrey;">order</span>
+            <br>flex item의 배치 순서를 지정한다. HTML 코드를 변경하지 않고 order 속성값을 지정하는 것으로 간단하게 재배치 가능
+            <br>기본 배치 순서는 flex container에 추가된 순서. 기본값은 0
+            <br>.flex-item {
+                order: 정수값;
+            }
+        </li>
+        <li><span style="color: red; background-color: lightgrey;">align-self</span>
+        <br>align-items 속성(flex container 속성으로 flex item을 flex container의 수직방향으로 정렬)보다 우선하여 개별 flex item을 정렬. 기본값은 auto
+        <br>3번째 4번째 flex item은 align-self 속성값이 우선 적용되어 정렬된다
+        </li>
+    </ul>
+    <hr>
+    <h2>실습</h2>
+    <div class="flex-container">
+        <div class="flex-item item1">1</div>
+        <div class="flex-item item2">2</div>
+        <div class="flex-item item3">3</div>
+        <div class="flex-item item4">4</div>
+        <div class="flex-item item5">5</div>
+    </div>
+</body>
+</html>
