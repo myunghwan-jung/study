@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Introduction</title>
+</head>
+<body>
+    <!-- 자바스크립트로 HTML 조작하기 -->
+    <h1 id="hello">내용바꾸기</h1>
+    <h1 id="hello2">내용바꾸기2</h1>
+    <h1 id="lumi">폰트 크기 바꾸기(숙제)</h1>
+    <h1 id="fla">폰트 색상 바꾸기</h1>
+    <script>
+        document.getElementById("hello").innerHTML = "내용을바꾸자";
+        document.getElementById("lumi").style.fontSize = "16px";
+        document.getElementById("fla").style.color = "red";
+        document.getElementById("hello2").innerHTML = "JS 고수에요";
+    </script>
+</body>
+</html>

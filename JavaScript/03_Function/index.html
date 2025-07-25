@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .camelCase {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="alert-box" id="alert">
+        알림창임
+        <button onclick="열고닫기('none')">닫기</button>
+    </div>
+    <button onclick="열고닫기('block')">버튼</button>
+    <div class="camelCase" id="camel">
+        camelCase는 첫 단어 시작은 소문자, 그 뒤로 단어 추가할 때는 대문자로 시작
+    </div>
+    <button onclick="document.getElementById('camel').style.display='block';">camelCase설명 열기</button> -->
+    <div class="id" id="id">
+        <span id="text"></span>
+        <button onclick="열고닫기2('id', 'none')">닫기</button>
+    </div>
+    <button onclick="열고닫기2('id', 'block'); 컨텐츠바꾸기('text', '아이디를입력하세요');">아이디버튼</button>
+    <button onclick="열고닫기2('id', 'block'); 컨텐츠바꾸기('text', '비밀번호를입력하세요');">비번버튼</button>
+    <script>
+        function 닫기(){
+            document.getElementById('alert').style.display='none';
+        }
+        function 열기(){
+            document.getElementById('alert').style.display='block';
+        }
+        function 열고닫기(구멍) {
+            document.getElementById('alert').style.display = 구멍;
+        }
+        function 열고닫기2(대상, 디스플레이) {
+            document.getElementById(대상).style.display = 디스플레이;
+        }
+        function 컨텐츠바꾸기(대상, 컨텐츠) {
+            document.getElementById(대상).innerText = 컨텐츠
+        }
+    </script>
+</body>
+</html>
