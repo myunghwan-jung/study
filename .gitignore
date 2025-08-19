@@ -2,3 +2,4 @@
 *.pem
 aws/00_Demo/
 HTML&CSS/assets/
+node_modules/
