@@ -6,5 +6,5 @@ app.listen(8080, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send('쌍빠큐ㅗ(^_^)ㅗ');
+    res.send('Node server Docker Image build test');
 }); 
